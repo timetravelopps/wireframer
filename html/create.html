@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+<head>
+    <title>Content Hierarchy</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/create.css"/>
+
+
+    <script type="text/javascript">
+
+// Conditional Form Fields Code
+
+var textbox = '<input type="text" name="content" value="Enter your text" style="display:inline-block !important;"/> ';
+var hidebox = '<input type="text" name="content" value="" style="display:none !important;"/> ';
+$(document).ready(function(){
+    $("select#element").on('change',function(){
+        if($(this).val()=="x-statement"){
+            $("#custom").html(textbox);
+        }else if($(this).val()=="video"){
+            $("#custom").html(hidebox);
+        }else if($(this).val()=="copy"){
+            $("#custom").html(textbox);
+          }else if($(this).val()=="heading"){
+            $("#custom").html(textbox);
+        }
+    });
+});
+
+
+
+</script>
+
+<script type="text/javascript">
+
+// Re-orderer
+
+
+$(document).ready(function(){
+    $('.reorder_link').on('click',function(){
+        $("ul.reorder-photos-list").sortable({ tolerance: 'pointer' });
+        $('.reorder_link').html('save reordering');
+        $('.reorder_link').attr("id","save_reorder");
+        $('#reorder-helper').slideDown('slow');
+        $('.image_link').attr("href","javascript:void(0);");
+        $('.image_link').css("cursor","move");
+        $("#save_reorder").click(function( e ){
+            if( !$("#save_reorder i").length )
+            {
+                $(this).html('').prepend('<img src="images/refresh-animated.gif"/>');
+                $("ul.reorder-photos-list").sortable('destroy');
+                $("#reorder-helper").html( "Reordering Photos - This could take a moment. Please don't navigate away from this page." ).removeClass('light_box').addClass('notice notice_error');
+                var h = [];
+                $("ul.reorder-photos-list li").each(function() {  h.push($(this).attr('id').substr(9));  });
+                $.ajax({
+                    type: "POST",
+                    url: "order_update.php",
+                    data: {ids: " " + h + ""},
+                    success: function(html) 
+                    {
+                        window.location.reload();
+                    }
+                }); 
+                return false;
+            }   
+            e.preventDefault();     
+        });
+    });
+});
+</script>
+
+<style type="text/css">
+      
+    </style>
+
+    </head>
+
+<body>
+
+  
+
+<!-- INPUT FORM -->
+<div class="left">
+  <h1>Add Page Elements</h1>
+  <form action = "create.php" method="POST">
+    
+        <select class="element" name="element" id="element">
+          <option selected="selected" disabled > Select a page element </option>
+          <option value="x-statement" name="x-statement" /> X-Statement </option>
+          <option value="heading" name="heading" /> Heading </option>
+          <option value="copy" name="copy" /> Text Content </option>
+          <option value="search" name="search" /> Search Bar </option>
+          <option value="video" name="video" /> Video </option>
+          <option value="image" name="image" /> Image </option>
+          <option value="carousel" name="carousel" /> Carousel </option>
+          <option value="avatar" name="avatar" /> Avatar </option>
+        </select>
+        
+
+    
+    <div class="entry"><div class="custom" id="custom"></div></div>
+    
+    
+
+    <div class="submit">
+      <input input type="submit" value=" Add To Page " id="submit" name="submit">
+    </div>
+
+  </form>
+  <br /><br />
+
+  <p class="message">{MESSAGE}</p>
+
+  </div>
+
+<!-- Display database contents and edit options -->
+<div class="right">
+
+  <h1>Content Hierarchy</h1>
+  <a href="javascript:void(0);" class="button outlined mleft_no reorder_link" id="save_reorder">Reorder Content</a>
+  <div id="reorder-helper" class="light_box" style="display:none;">1. Drag elements to reorder.<br>2. Click 'Save Reordering' when finished.</div>
+
+  <div class="content_list">
+      <ul class="reorder_ul reorder-photos-list">
+      {ELEMENT_LIST}
+      </ul>
+  </div>
+      <a class="button" href="index.php" target="new">View Your Wireframe</a>
+</div>
+
+
+</body>
+</html>

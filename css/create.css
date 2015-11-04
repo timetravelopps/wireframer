@@ -1,0 +1,135 @@
+body {
+        width:80%;
+        margin:0% auto 0 auto;
+        font-family: Helvetica, sans-serif;
+        line-height: 1.5em;
+        font-weight: 300;
+      }
+
+      .left {
+        float:left;
+        width:30%;
+        padding: 5%;
+      }
+
+      .right {
+        float: right;
+        width: 50%;
+        padding: 5%;
+        height:100%;
+      }
+
+      table, th, tr {
+        font-family: Helvetica, sans-serif;
+        font-weight: lighter;
+        margin-top: 60px;
+
+      }
+
+      tr {
+        height:50px;
+        text-transform: capitalize;
+      }
+      
+      select {
+        margin-top: 50px;
+        border: 1px solid #111;
+        background: transparent;
+        width: auto;
+        padding: 5px 35px 5px 5px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        height: 40px;
+         -webkit-appearance: none;
+         -moz-appearance: none;
+         appearance: none;
+        background: url("../img/dropdown-icon.png") 96% / 15% no-repeat #eee;
+        background-size: 20px;
+      } 
+
+      /*target Internet Explorer 9 and Internet Explorer 10:*/
+      @media screen and (min-width:0\0) { 
+          select {
+              background:none;
+              padding: 5px;
+              }
+      }
+
+      .entry {
+       height:30%;
+      }
+
+      .custom {
+            display: inline-block;
+            margin-top:0px !important;
+            }
+
+      input[type=text] {
+        margin: 0px 50px 50px 50px;
+              border: 1px solid #111;
+              background: transparent;
+              width: auto;
+              padding: 5px 35px 5px 5px;
+              font-size: 16px;
+              border: 1px solid #ccc;
+              height: 40px;
+               -webkit-appearance: none;
+               -moz-appearance: none;
+               appearance: none;
+               -webkit-border-radius: 5px;
+              border-radius: 5px; 
+              }
+
+      input[type=text]:focus {border-color:#333; }
+
+      input[type=submit] {padding: 10px 30px 10px 30px; background:#ccc; border:0 none;
+             cursor:pointer;
+            -webkit-border-radius: 5px;
+            border-radius: 5px; 
+            font-size: 16px;
+            font-weight: 700;
+            float: left !important;
+      }
+
+      .button {
+            padding: 10px 30px 10px 30px; 
+            background:#ccc; 
+            border:0 none;
+            cursor:pointer;
+            -webkit-border-radius: 5px;
+            border-radius: 5px; 
+            font-size: 16px;
+            font-weight: 700;
+            float: left !important;
+            bottom:0;
+            text-decoration: none;
+            color: #000;
+            display: block;
+      }
+
+      .button:a {
+        text-decoration: none;
+        color:#000;
+      }
+
+      #submit {
+              float:right;
+              }
+
+      #edit a {
+        background: url("../img/edit-icon.png") 96% / 15% no-repeat #eee;
+        background-size: 20px;
+      }
+      .content_list { width:100%; float:left; margin-top:0px;}
+      .content_list ul{ margin:0; padding:0; list-style-type:none;}
+
+      .content_list ul li{ width:60%; display:block; padding:7px; border:2px solid #ccc; float:left; margin:10px 7px; background:none; height:auto; text-transform: capitalize;}
+
+      .image_link img {
+        width:30px;
+        vertical-align: middle;
+      }
+
+
+
+
