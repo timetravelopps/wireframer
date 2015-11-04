@@ -40,5 +40,8 @@ foreach($rows as $row) {
     "{CONTENT}" => $row["content"],
   ]);
 }
+if(empty($rows)) {
+  $view->injectParameters(["{ELEMENT_LIST}" => ""]);
+}
 
 $view->render();
