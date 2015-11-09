@@ -15,15 +15,19 @@ if(isset($_POST['element'])) {
   ]);
 
   if($success !== false) {
-    $view->injectParameters([
-      "{MESSAGE}" => "Added to your Content Hierarchy!"
-    ]);
+    header("Location: /create.php?success", 303);
+    exit;
   }
   else {
     $view->injectParameters([
       "{MESSAGE}" => "Something went wrong...please try again"
     ]);
   }
+}
+else if(isset($_GET["success"])) {
+  $view->injectParameters([
+    "{MESSAGE}" => "Added to your Content Hierarchy!"
+  ]);
 }
 else {
   $view->injectParameters([
