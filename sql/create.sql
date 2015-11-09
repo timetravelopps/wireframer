@@ -1,12 +1,5 @@
 INSERT INTO 
 	layout 
 
-VALUES(
-	'', 
-	:name, 
-	:content, 
-	'',
-	'',
-	'',
-	''
-)
+set `element` = :name, 
+`content` = :content

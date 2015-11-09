@@ -10,8 +10,8 @@ if(isset($_POST['element'])) {
   $content = isset($_POST['content']) ? $_POST['content'] : "";
 
   $success = $db->create([
-    "name" => $name,
-    "content" => $content,
+    ":name" => $name,
+    ":content" => $content,
   ]);
 
   if($success !== false) {

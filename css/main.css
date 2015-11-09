@@ -132,13 +132,14 @@
 				min-height: 44px;
 				width:25%;
 				min-width: 275px;
-				background-color: #888;
+				background-color: #fff;
+				border-bottom: 1px #000 solid;
 				text-align: center;
 				font-weight: 700;
 				text-transform: uppercase;
 				vertical-align: middle;
 				font-size: 2vw;
-				line-height: 3.5vw;
+				line-height: 4vw;
 				/*margin-bottom: 10%;*/
 				display: block;
 				position: fixed;
@@ -185,7 +186,7 @@
 				width:100%;
 				height:auto;
 				margin-bottom: 5%;
-				content:url("../img/video.png");
+				content:url(../img/video.png);
 				overflow: hidden;
 
 			}
@@ -314,6 +315,14 @@
 			}
 
 			.avatar img { width:100%;height:100%;}
+
+			.newsitem  {
+				width:100%;
+				height:auto;
+				margin-bottom: 5%;
+				content:url(../img/newsitem.png);
+				overflow: hidden;
+			}
 
 /*			.phonetop {
 				width:25%;
