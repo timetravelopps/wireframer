@@ -1,0 +1,17 @@
+{
+    "name": "timetravelopps/wireframer",
+    "type": "project",
+    "require": {
+        "phpgt/dom": "^0.0.2"
+    },
+    "authors": [
+        {
+            "name": "Richard Birkin",
+            "email": "biff@timetravelopps.co.uk"
+        },
+        {
+            "name": "Greg Bowler",
+            "email": "greg.bowler@g105b.com"
+        }
+    ]
+}
