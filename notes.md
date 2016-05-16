@@ -34,3 +34,14 @@ To set the project name, pass `projectID` in the query string.
 Test example: `http://localhost:8080/wireframer.php?userID=test-user&projectID=123`
 
 > Once the user and project is set (for testing, this is done in the query string), it is stored in the session. To use it, `session.php` must be required in subsequent scripts.
+
+Templates
+---------
+
+Templates are HTML files that have the filename of the element they represent. They are loaded into the bootrap-ready page, and their content is injected from the database.
+
+Content can be injected by placing two braces around the placeholder content. For example, to inject the contents of a header: `<h1>{Content goes here}</h1>`, and the whole `content` field from the database is added in-place. For multiple pieces of content per template, the database field can be split up using braces, with matching content names. For example, to inject a link's URL and text at once: `<a href="{(url)http://blah.blah.blah}">{(text)Link text here}</a>` and the database `content` field can be as such: `{url}http://twitter.com/g105b{text}Greg's twitter page.`.
+
+The syntax of content placeholders can be easily tweaked to allow for different approaches, but this has been used so far to promote simplicity and rapid prototyping.
+
+For proof of concept, we have two really simple templates: `heading` and `carousel`.
