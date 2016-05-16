@@ -41,28 +41,18 @@
 
 			#phone {
 				/*display: block;*/
-				width:25%;
+				width:50%;
 				min-width: 275px;
 				min-height: 558px;
 				height:100%;
 				margin: 0 auto;
 				/*overflow: hidden; */
 				background: url("../img/iphone6-small.png") no-repeat top center; 
-				z-index: 10;
 				position: fixed;
 				left:50%;
-				margin-left: -12.5%;
-				background-size: 100% auto;
-				pointer-events: none;
+				margin-left: -25%;
+				background-size: auto 100%;
 			}
-
-			/*#phone img {
-				width:421.5px;
-				height:855px;
-				margin: 0 auto;
-				position: fixed;
-				z-index:100;
-			}*/
 
 			.fullwidth {
 				width:100%;
@@ -101,30 +91,31 @@
 
 
 			#screencontainer {
-				width:25%;
-				min-width: 275px;
-				min-height: 558px;
-				height: 2000px;
-				/*min-width:375px;*/
-				/*left:50%;
-				margin-left: -187.5px;*/
-				position: relative;
-				left:50%;
-				margin-left: -12.5%;
+				position: fixed;
+				top: 0;
+				left: 50%;
+				width:1px;
+				height: 100%;
+				/*margin-left: -12.5%;*/
 				/*z-index: 1000;*/
 
 			}
 
 			.screen {
-				width:88%;
-				height:auto;
-				z-index: 1;
-				margin-top: 24.5%;
-				overflow: auto;
-				/*display: inline-block;*/
 				position: absolute;
-				padding-left: 6%;
-				padding-right: 6%;
+				top: 12vh;
+				bottom: 12vh;
+				left: -21vh;
+				width: 42vh;
+			}
+
+			#screencontainer .screen iframe {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				border: none;
 			}
 
 			.header {
