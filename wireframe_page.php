@@ -5,8 +5,10 @@
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
 	<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css" />
 	<link rel="stylesheet" href="css/wireframer-theme.css" />
+	<link rel="stylesheet" href="css/no-scrollbar.css" />
 	<script src="js/jquery-2.2.4.js"></script>
 	<script src="bootstrap/js/bootstrap.js"></script>
+	<script src="js/no-scrollbar.js"></script>
 </head>
 <body>
 
