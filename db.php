@@ -30,7 +30,7 @@ class DB{
 			die("Connection failed: " . $e->getMessage());
 		}
 
-		$this->dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_BOTH);
+		$this->dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 	}
 	
 	/**
@@ -91,6 +91,15 @@ class DB{
 		return $this->stmt->fetchAll();
 	}
 
+	public function getRows() {
+		$this->prepareStatement("getRows");
+		$this->execute([
+			":userID" => $_SESSION["userID"],
+			":projectID" => $_SESSION["projectID"],
+		]);
+
+		return $this->stmt->fetchAll();
+	}
 }
 
 // Removed the ending PHP tag. See notes for why.
