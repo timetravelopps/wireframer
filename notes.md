@@ -31,7 +31,7 @@ To set your user ID, pass `userID` in the query string. OpenAuth user IDs look s
 
 To set the project name, pass `projectID` in the query string.
 
-Test example: `http://localhost:8080/wireframer.php?userID=test-user&projectID=123`
+Test example: `http://localhost:8080/wireframe_page.php?userID=test-user&projectID=123`
 
 > Once the user and project is set (for testing, this is done in the query string), it is stored in the session. To use it, `session.php` must be required in subsequent scripts.
 
